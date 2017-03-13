@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <style>
+        #pyramid {
+            line-height: 0;
+            font-size: 30px;
+        }
+
+        body {
+            font-family: "Courier New", monospace;
+            text-align: center;
+        }
+
+        .invalid-field {
+            border: 1px solid red;
+        }
+
+        .error-message {
+            color: red;
+        }
+    </style>
+    <title>Pyramid Slide</title>
+</head>
+<body>
+    <h1>Pyramid Slide</h1>
+
+    <form id="draw-form">
+        <label>
+        Brick Symbol:
+        </label>
+        <select name="brick">
+            <option value="hash">#</option>
+            <option value="amp">@</option>
+            <option value="x">X</option>
+            <option value="dollar">$</option>
+        </select>
+        <label>
+            How high?
+            <input type="range" id="height" min="1" max="20"/> <strong>1 thru 20</strong>
+            <label class="error-message">
+                <!-- If there was a user error, we will put a message in here -->
+            </label>
+        </label>
+        <br><br>
+        <input type="submit" value="Draw a pyramid"/>
+    </form>
+
+    <br><br>
+
+    <div id="pyramid"></div>
+
+    <script src="pyramid.js"></script>
+</body>
+</html>
