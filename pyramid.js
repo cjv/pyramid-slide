@@ -3,8 +3,15 @@
 var heightElem = document.getElementById("height");
 var formElem = document.getElementById("draw-form");
 
+
+function brickTypes(brick) {
+    var brickChoice = document.getElementById("brickop");
+        brickType = brickChoice.value; 
+        return;   
+}
+
 // set a handler function for the form's submission event
-formElem.onsubmit = function(event) {
+formElem.oninput = function(event) {
 
     // QUIZ
     // what happens if we don't do this?
@@ -67,6 +74,8 @@ function clearError(message) {
 
 
 
+
+
 /**
  * drawPyramid
  *
@@ -91,7 +100,7 @@ function drawPyramid(height) {
             rowStr += spaceChar;
         }
         for (var i = 0; i < numBricks; i++) {
-            rowStr += "#";
+            rowStr += brickType;
         }
 
         // make a <p> element for this row, and insert it into the #pyramid container

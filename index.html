@@ -8,9 +8,21 @@
             font-size: 30px;
         }
 
+        #header {
+            background-color: #02C39A;
+            border-style: solid;
+            border-color: #00A896;
+            width: 600px;
+            height: 80px;
+            margin: auto;
+            color: #05668D;
+            font-size: 1.2 em;
+        }
+
         body {
             font-family: "Courier New", monospace;
             text-align: center;
+            background-color: #F0F3BD;
         }
 
         .invalid-field {
@@ -24,27 +36,31 @@
     <title>Pyramid Slide</title>
 </head>
 <body>
+    <div id="header">
     <h1>Pyramid Slide</h1>
+    </div>
 
     <form id="draw-form">
         <label>
         Brick Symbol:
         </label>
-        <select name="brick">
-            <option value="hash">#</option>
-            <option value="amp">@</option>
-            <option value="x">X</option>
-            <option value="dollar">$</option>
+        <select name="brick" id="brickop" onchange="brickTypes()">
+            <option value="#">#</option>
+            <option value="@">@</option>
+            <option value="X">X</option>
+            <option value="$">$</option>
+            <option value="~">~</option>
+            <option value="+">+</option>
         </select>
         <label>
             How high?
-            <input type="range" id="height" min="1" max="20"/> <strong>1 thru 20</strong>
+            <input type="range" id="height" min="1" max="20" oninput="drawPyramid()" /> 
+            <strong>1 thru 20</strong>
             <label class="error-message">
                 <!-- If there was a user error, we will put a message in here -->
             </label>
         </label>
         <br><br>
-        <input type="submit" value="Draw a pyramid"/>
     </form>
 
     <br><br>
