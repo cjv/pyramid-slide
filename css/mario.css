@@ -1,0 +1,36 @@
+        #pyramid {
+            line-height: 0;
+            font-size: 30px;
+        }
+
+        #header {
+            background-color: #02C39A;
+            border-style: solid;
+            border-radius: 10px;
+            border-width: 13px;
+            border-color: #00A896;
+            width: 600px;
+            height: 80px;
+            margin: auto;
+            color: #05668D;
+            font-size: 1.2 em;
+        }
+
+        #form {
+            font-weight: bold;
+            padding: 10px 10px 10px 10px;
+        }
+
+        body {
+            font-family: "Courier New", monospace;
+            text-align: center;
+            background-color: #F0F3BD;
+        }
+
+        .invalid-field {
+            border: 1px solid red;
+        }
+
+        .error-message {
+            color: red;
+        }
