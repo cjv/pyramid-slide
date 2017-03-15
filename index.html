@@ -1,50 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-    <style>
-        #pyramid {
-            line-height: 0;
-            font-size: 30px;
-        }
-
-        #header {
-            background-color: #02C39A;
-            border-style: solid;
-            border-color: #00A896;
-            width: 600px;
-            height: 80px;
-            margin: auto;
-            color: #05668D;
-            font-size: 1.2 em;
-        }
-
-        body {
-            font-family: "Courier New", monospace;
-            text-align: center;
-            background-color: #F0F3BD;
-        }
-
-        .invalid-field {
-            border: 1px solid red;
-        }
-
-        .error-message {
-            color: red;
-        }
-    </style>
     <title>Pyramid Slide</title>
+    <link rel="stylesheet" href="css/mario.css">
 </head>
+
 <body>
     <div id="header">
     <h1>Pyramid Slide</h1>
     </div>
-
+    <div id="form"> 
     <form id="draw-form">
         <label>
         Brick Symbol:
         </label>
-        <select name="brick" id="brickop" onchange="brickTypes()">
+        <select name="brick" id="brickop" onchange="drawPyramid()">
             <option value="#">#</option>
             <option value="@">@</option>
             <option value="X">X</option>
@@ -55,18 +25,19 @@
         <label>
             How high?
             <input type="range" id="height" min="1" max="20" oninput="drawPyramid()" /> 
-            <strong>1 thru 20</strong>
+            <span id="selectheight"></span>
             <label class="error-message">
                 <!-- If there was a user error, we will put a message in here -->
             </label>
         </label>
         <br><br>
     </form>
+    </div>
 
     <br><br>
-
+    <div class=rainbow>
     <div id="pyramid"></div>
-
+    </div>
     <script src="pyramid.js"></script>
 </body>
 </html>

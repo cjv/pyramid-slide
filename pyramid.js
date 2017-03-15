@@ -1,17 +1,18 @@
 
 
 var heightElem = document.getElementById("height");
+
 var formElem = document.getElementById("draw-form");
 
 
-function brickTypes(brick) {
+function brickTypes() {
     var brickChoice = document.getElementById("brickop");
         brickType = brickChoice.value; 
         return;   
 }
 
 // set a handler function for the form's submission event
-formElem.oninput = function(event) {
+formElem.onchange = function(event) {
 
     // QUIZ
     // what happens if we don't do this?
@@ -31,7 +32,6 @@ formElem.oninput = function(event) {
 
     // convert the string to an int
     height = parseInt(heightStr);
-
     // if the height is not-a-number, yell at them and exit early
 
     if (isNaN(heightStr) || height < 1) {
@@ -85,7 +85,8 @@ function drawPyramid(height) {
 
     // first, clear the old content
     document.getElementById("pyramid").innerHTML = "";
-
+    // get the brick type
+    brickTypes();
     // for each row....
     for (var row = 0; row < height; row++) {
 
@@ -107,5 +108,7 @@ function drawPyramid(height) {
         rowElem = document.createElement("p");
         rowElem.innerHTML = rowStr;
         document.getElementById("pyramid").appendChild(rowElem);
+        document.getElementById("selectheight").innerHTML = height;
+
     }
 }
